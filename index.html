@@ -291,8 +291,19 @@
 
 <script src="app.js?v=FINAL"></script>
 
+<script>
+fetch('https://api.countapi.xyz/hit/aecoin/visits')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('visitors').innerText = data.value;
+  });
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+  
 </body>
 </html>
+
 
 
 
