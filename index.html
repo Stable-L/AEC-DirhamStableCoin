@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AE Coin (AEC) — UAE Digital Asset</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AE Coin (AEC) — TRC20 digital asset inspired by the United Arab Emirates.">
+  <meta name="keywords" content="AE Coin, AEC Token, UAE Coin, Dirham Crypto, TRC20 Token, Tron Blockchain">
+  <meta name="author" content="AE Coin Team">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AE Coin (AEC) — UAE Digital Asset">
+  <meta property="og:description" content="AE Coin (AEC) is a TRC20 digital asset inspired by the UAE Dirham.">
+  <meta property="og:image" content="assets/cover-uae-ae-coin.png">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/tronweb/dist/TronWeb.min.js"></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="main-header">
+
+  <!-- COVER -->
+  <div class="cover-container">
+    <img src="assets/cover.png" class="cover-img">
+    <div class="cover-overlay">
+      <img src="assets/logo.png" class="cover-logo">
+      <h1>AE Coin (AEC)</h1>
+      <nav class="main-nav">
+  <a href="#about">About</a>
+  <a href="#token">Token Info</a>
+  <a href="#tokenomics">Tokenomics</a>
+  <a href="#wallet">Your Wallet</a>
+  <a href="#wallets">Supported Wallets</a>
+  <a href="#buy">How to Buy</a>
+  <a href="#roadmap">Roadmap</a>
+  <a href="#news">Crypto News</a>
+</nav>
+      <p>UAE-Inspired Digital Cryptocurrency Asset</p>
+    </div>
+  </div>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div id="tickerContent" class="ticker-content">Loading market prices...</div>
+  </div>
+
+</header>
+
+<!-- MAIN -->
+<main class="container">
+
+<!-- HERO -->
+<section class="hero">
+  <h2>The Future of Digital Dirham</h2>
+  <p class="lead">
+    AE Coin (AEC) is a TRC20 digital asset inspired by the economic strength and trust of the United Arab Emirates.
+  </p>
+  <button id="connectBtn" class="btn btn-primary">Connect Wallet</button>
+  <p id="walletStatus" class="muted">Not connected</p>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <h2>About AE Coin</h2>
+
+  <p>
+    <strong>AE Coin (AEC)</strong> is the world's first Dirham stable coin cryptocurrency asset built on the
+    <strong>TRON blockchain</strong>, inspired by the <strong>United Arab Emirates Dirham</strong>.
+  </p>
+
+  <p>
+    Inspired by the UAE Dirham, AE Coin combines value stability, blockchain transparency, and transaction efficiency
+    to support digital payments, asset transfers, and seamless integration within the Web3 ecosystem.
+  </p>
+</section>
+
+<p class="note-warning">
+  <strong>Note:</strong>
+  AE Coin (AEC) is a digital asset inspired by the Dirham and does not represent legal tender or a central bank-issued currency.
+</p>
+
+<!-- TOKEN INFO -->
+<section id="token" class="section">
+  <h2>Token Information</h2>
+  <div class="card">
+    <p><strong>Name:</strong> AE Coin</p>
+    <p><strong>Symbol:</strong> AEC</p>
+    <p><strong>Network:</strong> TRON (TRC20)</p>
+    <p><strong>Decimals:</strong> 6</p>
+    <p><strong>Total Supply:</strong> 250,000,000,000 AEC</p>
+    <p><strong>Contract:</strong> <code>TNKPo4vCEARpZQHb9YCYKDjTvZWxNrf5mL</code></p>
+  </div>
+</section>
+
+<!-- TOKENOMICS -->
+<section id="tokenomics" class="section">
+  <h2>AE Coin Tokenomics</h2>
+
+  <div class="card">
+    <p><strong>Network:</strong> TRON (TRC20)</p>
+    <p><strong>Total Supply:</strong> 250,000,000,000 AEC (Fixed Supply)</p>
+    <p><strong>Minting:</strong> Disabled (No further minting)</p>
+    <p><strong>Burning:</strong> No automatic burning mechanism</p>
+  </div>
+
+  <div class="grid" style="margin-top:20px">
+    <div class="card">
+      <h3>💧 Liquidity Pool — 40%</h3>
+      <p>
+        Allocated to ensure healthy liquidity and stable trading on SunSwap.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>🏦 Treasury / Ecosystem — 30%</h3>
+      <p>
+        Used for long-term development, operations, security, and strategic partnerships.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>🎁 Community & Incentives — 20%</h3>
+      <p>
+        Dedicated to community rewards, airdrops, incentives, and ecosystem growth.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>👨‍💻 Team & Development — 10%</h3>
+      <p>
+        Reserved for the core development team with responsible allocation and no aggressive vesting.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- WALLET -->
+<section id="wallet" class="section">
+  <h2>Your Wallet</h2>
+  <div class="card">
+    <p><strong>Address:</strong> <span id="walletAddress">—</span></p>
+    <p><strong>AEC Balance:</strong> <span id="aecBalance">—</span></p>
+
+    <h3>Send AE Coin</h3>
+    <input id="sendTo" placeholder="Recipient address">
+    <input id="sendAmount" placeholder="Amount AEC">
+    <button id="sendBtn" class="btn btn-primary">Send Token</button>
+    <p id="txStatus" class="muted"></p>
+  </div>
+</section>
+
+<!-- HOW TO BUY -->
+<section id="buy" class="section">
+  <h2>How to Buy AE Coin</h2>
+  <div class="card">
+    <p>Swap AE Coin directly using SunSwap V3:</p>
+    <iframe 
+      src="https://sun.io/?lang=en-US#/swap/v3" 
+      style="width:100%;height:600px;border:1px solid #222;border-radius:16px;"
+      frameborder="0">
+    </iframe>
+
+    <p style="margin-top:12px;font-size:14px;color:var(--muted);display:flex;align-items:center;gap:6px;">
+  Powered by 
+  <a href="https://sun.io/?lang=en-US#/v3/swap" target="_blank" style="color:var(--gold);text-decoration:underline;display:flex;align-items:center;gap:6px;">
+    <img src="assets/sunswap.png" alt="SunSwap" style="width:18px;height:18px;">
+    SunSwap V3
+  </a>
+</p>
+
+    <div style="margin-top:16px;font-size:14px;line-height:1.6;color:var(--text)">
+      <strong>How to swap:</strong>
+      <ol>
+        <li>Connect your wallet (TRONLink, Binance Web3 Wallet, OKX Wallet, TokenPocket).</li>
+        <li>Choose <strong>USDT</strong> or <strong>TRX</strong> to swap.</li>
+        <li>If AE Coin (AEC) is not listed, add manually with contract: <code>TNKPo4vCEARpZQHb9YCYKDjTvZWxNrf5mL</code></li>
+        <li>Enter the amount to swap and confirm the transaction in your wallet.</li>
+        <li>AE Coin will appear in your wallet after swap.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORTED WALLETS -->
+<section id="wallets" class="section">
+  <h2>Supported Wallets</h2>
+
+  <p class="muted">
+    AE Coin (AEC) can be swapped and traded using the following Web3 wallets:
+  </p>
+
+  <div class="grid">
+    <div class="card" style="display:flex;align-items:center;gap:10px;">
+      <img src="assets/binance.png" style="width:18px;height:18px;">
+      Binance Web3 Wallet
+    </div>
+
+    <div class="card" style="display:flex;align-items:center;gap:10px;">
+      <img src="assets/tokenpocket.png" style="width:18px;height:18px;">
+      TokenPocket Wallet
+    </div>
+
+    <div class="card" style="display:flex;align-items:center;gap:10px;">
+      <img src="assets/okx.png" style="width:18px;height:18px;">
+      OKX Wallet
+    </div>
+
+    <div class="card" style="display:flex;align-items:center;gap:10px;">
+      <img src="assets/klever.png" style="width:18px;height:18px;">
+      Klever Wallet
+    </div>
+
+    <div class="card" style="display:flex;align-items:center;gap:10px;">
+      <img src="assets/tronlink.png" style="width:18px;height:18px;">
+      TronLink Wallet
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap" class="section">
+  <h2>Roadmap</h2>
+  <div class="grid">
+    <div class="card">Phase 1 — Token Launch & Website</div>
+    <div class="card">Phase 2 — Liquidity & Community Growth</div>
+    <div class="card">Phase 3 — Web3 Payments & Partnerships</div>
+    <div class="card">Phase 4 — Global Adoption</div>
+  </div>
+</section>
+
+<!-- CRYPTO NEWS -->
+<section id="news" class="section">
+  <h2>Latest Crypto News</h2>
+  <div id="newsContainer" class="news-grid">Loading crypto news...</div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-info">
+    <a href="https://x.com/ThetherUsd_Labs" target="_blank">
+      <img src="assets/x.png" alt="Twitter"> Twitter
+    </a>
+    <a href="https://t.me/AECoin_Dirham" target="_blank">
+      <img src="assets/telegram.png" alt="Telegram"> Telegram
+    </a>
+    <a href="mailto:ae.coin@yahoo.com">
+      <img src="assets/email.png" alt="Email"> ae.coin@yahoo.com
+    </a>
+  </div>
+  © <span id="year"></span> AE Coin — UAE Digital Asset
+</footer>
+
+<!-- BACKGROUND MUSIC -->
+<audio id="bgMusic" autoplay muted loop preload="auto">
+  <source src="cyberpunk.mp3" type="audio/mpeg">
+</audio>
+<button id="musicBtn" onclick="toggleMusic()" style="position:fixed;bottom:20px;right:20px;z-index:999;font-size:22px;">🔇</button>
+<div id="soundGate" style="position:fixed;inset:0;background:rgba(0,0,0,0.85);color:white;display:flex;align-items:center;justify-content:center;z-index:9999;cursor:pointer;font-size:20px;">▶ Enter with sound</div>
+
+<script src="app.js?v=FINAL"></script>
+
+</body>
+</html>
+
