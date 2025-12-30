@@ -292,17 +292,35 @@
 <script src="app.js?v=FINAL"></script>
 
 <script>
-fetch('https://api.countapi.xyz/hit/aecoin/visits')
-  .then(res => res.json())
-  .then(data => {
-    document.getElementById('visitors').innerText = data.value;
-  });
+document.addEventListener("DOMContentLoaded", () => {
 
-document.getElementById("year").textContent = new Date().getFullYear();
+  // ===== VISITOR COUNTER =====
+  const visitorEl = document.getElementById("visitors");
+  if (visitorEl) {
+    fetch("https://api.countapi.xyz/hit/aecoin-aec/visits")
+      .then(res => res.json())
+      .then(data => {
+        visitorEl.textContent = data.value.toLocaleString();
+      })
+      .catch(err => {
+        console.error("Visitor counter error:", err);
+        visitorEl.textContent = "—";
+      });
+  }
+
+  // ===== COPYRIGHT YEAR =====
+  const yearEl = document.getElementById("year");
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+
+});
 </script>
+
   
 </body>
 </html>
+
 
 
 
